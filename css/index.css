@@ -1,0 +1,147 @@
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0px;
+}
+
+#main {
+    height: 800px;
+    overflow: hidden;
+}
+
+#main .row {
+    margin: 0;
+    padding: 0;
+    border: 0; 
+}
+#main > .row{
+    height: 100%;
+}
+#main > .row iframe{
+    margin-top: -5%; 
+    height: 80%;
+    width: 100%;
+}
+
+#main .midcenter{
+    position: relative;
+    top: 250px;
+}
+#main .midcenter .rollDown{
+	color:black;
+    position: inherit;
+    top: -50px;    
+}
+#main #rollDiv .left{
+    float: left;
+}
+#main #rollDiv .rollUp{
+	color:black;
+    position: fixed;
+    top: 50px;
+	display: none;
+}
+#main #rollDiv .right{
+    float: right;
+}
+#main #rollDiv .rollDown{
+	color:black;
+    position: fixed;
+    top: 700px;
+	display: none;
+}
+
+#main #humanDiv{
+    /*background: url('/img/human3.png');*/
+    background-repeat: no-repeat;
+}
+
+/*teddy*/
+#main #teddyHead{
+    top: -50px;
+    position: relative;
+}
+
+#main #teddyLeftHand{
+    top: 72px;    
+    left: -240px;
+    position: relative;
+}
+#main #teddyRightHand{
+    position: relative;
+    top: -25;
+    left: 230;
+}
+#main #teddyLeftFoot{
+    position: relative;
+    top: 125px;
+    left: -200px;
+}
+#main #teddyRightFoot{
+    position: relative;
+    left: 190;
+    top: 28px;
+}
+#main #teddyCenter{
+    position: relative;
+    top:200;
+    /*margin-top: 50%;*/
+    /*left: 190;
+    top: 28px;*/
+}
+
+#main #teddyCompile{
+    margin-top: 13%;
+    position: relative;
+}
+
+@media screen and (max-width:1366px){
+    #main #Yes{
+        margin-top: -1500px;
+        margin-left: 30.5%;
+        /*margin-left: 40%;*/
+        opacity: 0;
+        transition: opacity 0.5s linear;
+        -webkit-transition: opacity 0.5s linear;
+        -moz-transition: opacity 0.5s linear;
+        -o-transition: opacity 0.5s linear;
+        -ms-transition: opacity 0.5s linear;
+        display: block;
+    }
+}
+
+@media screen and (max-width:1920px){
+    #main #Yes{
+        margin-top: -1500px;
+        /*margin-left: 36.5%;*/
+        /* for nw.js */
+        
+		/*margin-left: 40%;*/
+		/* for browser */
+		
+		margin-left: 36.5%;
+		opacity: 0;
+        transition: opacity 0.5s linear;
+        -webkit-transition: opacity 0.5s linear;
+        -moz-transition: opacity 0.5s linear;
+        -o-transition: opacity 0.5s linear;
+        -ms-transition: opacity 0.5s linear;
+        display: block;
+    }
+}
+
+#main #No{
+    margin-top: -244px;
+    margin-left: 32%;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
+    -ms-transition: opacity 0.5s linear;
+    display: block;
+}
+
+#runUnityBtn{
+    visibility: hidden;
+}

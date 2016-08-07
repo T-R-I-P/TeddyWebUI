@@ -1,0 +1,12 @@
+{
+  "name": "TeddyWebUI",
+  "main": "index.html",
+  "window": {
+  	"width" : 1366,
+  	"height":768,
+    "frame": false,
+    "toolbar": false,
+    "resizable": false
+  }
+
+}
