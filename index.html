@@ -6,6 +6,7 @@
         <link href="./css/index.css" rel="stylesheet">
         <link href="./css/button.css" rel="stylesheet">
         <link href="./css/loader.css" rel="stylesheet">
+        <script src="./js/bluebird.min.js"></script>
         <script src="./js/jquery.min.js"></script>        
         <script src='./js/three.min.js'></script>
 		<script src='./js/bas.js'></script>
@@ -14,18 +15,9 @@
 		<script src='./js/pnltri.min.js'></script>
 		<script src='./js/droid_sans_bold.typeface.js'></script>
 		<script src='./js/TweenMax.min.js'></script>
-        <script src="./js./index.js"></script>
     </head>
     
     <body style="overflow: hidden;">
-        <script>
-        THREE.ShapeUtils.triangulateShape = (function () {
-                var pnlTriangulator = new PNLTRI.Triangulator();
-                return function triangulateShape(contour, holes) {
-                    return pnlTriangulator.triangulate_polygon([contour].concat(holes));
-                };
-            })();
-        </script>
         
         <div id="main" class="container">
             
@@ -39,7 +31,7 @@
             <div id="humanDiv" class="row">
                 <div class="center" style="margin-top:15%">
                     <div id="teddyCenter" class="wrap">                        
-                        <button class="drawButton">Draw!</button>
+                        <button id="drawButton" class="drawButton">Draw!</button>
                         <img src="./Img/check_arrow_2.svg" alt="" width=49px style="margin-top:-2.5px;">
                         <div class="loader">Loading...</div>
                         <svg width="66px" height="66px">
@@ -48,33 +40,31 @@
                     </div>
                 </div>
             </div>
-            
-            <div id="mixamoDiv" class="row">
-                <iframe src="https://www.mixamo.com/store">
-                </iframe>
-            </div>
-            
+
             <div id="LastDiv" class="row">
-                    <div id="teddyCompile" class="wrap">                        
-                        <button class="compButton">Compile</button>
-                        <img src="./Img/check_arrow_2.svg" alt="" width=49px style="margin-top:-2.5px;">
-                        <div class="loader">Loading...</div>
-                        <svg width="66px" height="66px">
-                            <circle class="circle_2" stroke-position="outside" stroke-width="3" fill="none" cx="34" cy="33" r="29" stroke="#1ECD97"></circle>
-                        </svg>
-                    </div>
-                
+                <div id="teddyCompile" class="wrap">
+                    <!--<button id="compButton" class="compButton">Compile</button>
+                    <img src="./Img/check_arrow_2.svg" alt="" width=49px style="margin-top:-2.5px;">
+                    <div class="loader">Loading...</div>
+                    <svg width="66px" height="66px">
+                        <circle class="circle_2" stroke-position="outside" stroke-width="3" fill="none" cx="34" cy="33" r="29" stroke="#1ECD97"></circle>
+                    </svg>-->
+                </div>
+
+                <canvas id="teddyCanvas" height="600" width="1000"></canvas>
+
                 <div class="midcenter center">
                     <a id="runUnityBtn" class="waves-effect waves-light btn-large">Run</a>
                 </div>
             </div>
-            
+
+
             <div id="rollDiv" class="row">
                 <div class="left">
-                    <a class="rollUp waves-effect waves-light btn-large">Back</a>
+                    <a id="rollUp" class="rollUp waves-effect waves-light btn-large">Back</a>
                 </div>
                 <div class="right">
-                    <a class="rollDown waves-effect waves-light btn-large">Next</a>
+                    <a id="rollDown" class="rollDown waves-effect waves-light btn-large">Next</a>
                 </div>
             </div>
             <div id="Yes">
@@ -85,4 +75,16 @@
             </div>
         </div>
     </body>
+
+    <script>
+        THREE.ShapeUtils.triangulateShape = (function () {
+            var pnlTriangulator = new PNLTRI.Triangulator();
+            return function triangulateShape(contour, holes) {
+                return pnlTriangulator.triangulate_polygon([contour].concat(holes));
+            };
+        })();
+    </script>
+    <script src="./js/index.js"></script>
+    <script src="./js/drawTeddy.js"></script>
+    <script src="./js/three.js"></script>
 </html>
