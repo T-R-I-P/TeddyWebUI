@@ -51,6 +51,12 @@ canvas {
 	display: none;
 }
 
+#main #rollDiv .loader{
+    display: none;
+    position: fixed;
+    top: 600px
+}
+
 #main #humanDiv{
     /*background: url('/img/human3.png');*/
     background-repeat: no-repeat;

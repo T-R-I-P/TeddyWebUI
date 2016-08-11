@@ -2,49 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="624e8332-2438-4d64-829b-d17e144dec9b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml___jb_tmp___" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Img/check_arrow_2.svg" afterPath="$PROJECT_DIR$/Img/check_arrow_2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/button.css" afterPath="$PROJECT_DIR$/css/button.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/css/material-design-iconic-font.css" afterPath="$PROJECT_DIR$/css/css/material-design-iconic-font.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/fonts/Material-Design-Iconic-Font.svg" afterPath="$PROJECT_DIR$/css/fonts/Material-Design-Iconic-Font.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/loader.css" afterPath="$PROJECT_DIR$/css/loader.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bas.js" afterPath="$PROJECT_DIR$/js/bas.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/drawTeddy.js" afterPath="$PROJECT_DIR$/js/drawTeddy.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/three.js" afterPath="$PROJECT_DIR$/js/three.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/mymodel.obj" afterPath="$PROJECT_DIR$/models/mymodel.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/skeleton.json" afterPath="$PROJECT_DIR$/models/skeleton.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/teddy.json" afterPath="$PROJECT_DIR$/models/teddy.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/teddy_poly.json" afterPath="$PROJECT_DIR$/models/teddy_poly.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openTeddy.php" afterPath="$PROJECT_DIR$/openTeddy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/FinalBaseMesh.obj" afterPath="$PROJECT_DIR$/teddy/FinalBaseMesh.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/README.txt" afterPath="$PROJECT_DIR$/teddy/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/bird.obj" afterPath="$PROJECT_DIR$/teddy/bird.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/bunny.obj" afterPath="$PROJECT_DIR$/teddy/bunny.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/default.obj" afterPath="$PROJECT_DIR$/teddy/default.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/dragon.obj" afterPath="$PROJECT_DIR$/teddy/dragon.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/fish.obj" afterPath="$PROJECT_DIR$/teddy/fish.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/manual/tutorial.html" afterPath="$PROJECT_DIR$/teddy/manual/tutorial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/manual/tutorial1.html" afterPath="$PROJECT_DIR$/teddy/manual/tutorial1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/manual/tutorial2.html" afterPath="$PROJECT_DIR$/teddy/manual/tutorial2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/manual/tutorial3.html" afterPath="$PROJECT_DIR$/teddy/manual/tutorial3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/manual/tutorial4.html" afterPath="$PROJECT_DIR$/teddy/manual/tutorial4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/manual/tutorial5.html" afterPath="$PROJECT_DIR$/teddy/manual/tutorial5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/manual/tutorial6.html" afterPath="$PROJECT_DIR$/teddy/manual/tutorial6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/manual/tutorial7.html" afterPath="$PROJECT_DIR$/teddy/manual/tutorial7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/manual/tutorial8.html" afterPath="$PROJECT_DIR$/teddy/manual/tutorial8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/plute.obj" afterPath="$PROJECT_DIR$/teddy/plute.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/squirrel.obj" afterPath="$PROJECT_DIR$/teddy/squirrel.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/teddy.bat" afterPath="$PROJECT_DIR$/teddy/teddy.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/teddy.html" afterPath="$PROJECT_DIR$/teddy/teddy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/teddy.obj" afterPath="$PROJECT_DIR$/teddy/teddy.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/test.obj" afterPath="$PROJECT_DIR$/teddy/test.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teddy/turtle.obj" afterPath="$PROJECT_DIR$/teddy/turtle.obj" />
     </list>
     <ignored path="TeddyWebUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,9 +31,13 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1178">
-              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="288">
+              <caret line="52" column="28" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="28" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,8 +45,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2603">
-              <caret line="137" column="44" selection-start-line="137" selection-start-column="44" selection-end-line="137" selection-end-column="44" />
+            <state relative-caret-position="734">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -88,31 +55,19 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="183" column="10" selection-start-line="183" selection-start-column="10" selection-end-line="183" selection-end-column="10" />
+            <state relative-caret-position="266">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="drawTeddy.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="drawTeddy.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/drawTeddy.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="85" column="33" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="33" />
+            <state relative-caret-position="133">
+              <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cilent.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/node/cilent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="72" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -120,8 +75,8 @@
       <file leaf-file-name="openTeddy.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/openTeddy.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="92" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="92" />
+            <state relative-caret-position="0">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -153,12 +108,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/js/three.js" />
-        <option value="$PROJECT_DIR$/css/index.css" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/index.js" />
-        <option value="$PROJECT_DIR$/js/drawTeddy.js" />
-        <option value="$PROJECT_DIR$/openTeddy.php" />
         <option value="$PROJECT_DIR$/node/cilent.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/index.css" />
+        <option value="$PROJECT_DIR$/js/index.js" />
+        <option value="$PROJECT_DIR$/openTeddy.php" />
+        <option value="$PROJECT_DIR$/js/drawTeddy.js" />
       </list>
     </option>
   </component>
@@ -203,8 +158,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -329,15 +284,16 @@
       <workItem from="1470556940008" duration="32000" />
       <workItem from="1470725946019" duration="1461000" />
       <workItem from="1470834672754" duration="2035000" />
+      <workItem from="1470880616621" duration="3482000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12171000" />
+    <option name="totallyTimeSpent" value="15653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20572917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -376,9 +332,75 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2603">
+          <caret line="137" column="44" selection-start-line="137" selection-start-column="44" selection-end-line="137" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3477">
+          <caret line="183" column="10" selection-start-line="183" selection-start-column="10" selection-end-line="183" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/drawTeddy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="85" column="33" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node/cilent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openTeddy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="92" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6669">
+          <caret line="351" column="10" selection-start-line="351" selection-start-column="10" selection-end-line="351" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -426,7 +448,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -442,7 +468,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -486,22 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1178">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2603">
-          <caret line="137" column="44" selection-start-line="137" selection-start-column="44" selection-end-line="137" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/three.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6669">
@@ -510,37 +524,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.js">
+    <entry file="file://$PROJECT_DIR$/node/cilent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="183" column="10" selection-start-line="183" selection-start-column="10" selection-end-line="183" selection-end-column="10" />
+        <state relative-caret-position="665">
+          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/drawTeddy.js">
+    <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="85" column="33" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="33" />
+        <state relative-caret-position="266">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/openTeddy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="92" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="92" />
+        <state relative-caret-position="0">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node/cilent.js">
+    <entry file="file://$PROJECT_DIR$/js/drawTeddy.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="72" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="133">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>

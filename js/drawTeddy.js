@@ -8,6 +8,7 @@ function drawTeddyCanvas() {
 
   canvas = document.getElementById('teddyCanvas');
   context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
 
   Promise.all([getPolygon(), getMesh()])
       .spread(function (data, position) {

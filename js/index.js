@@ -12,20 +12,18 @@ $('#main .rollDown').on('click', function() {
 		return ;
 	}
 	
-	if(clickCount == 3){ // last page
+	/*if(clickCount == 2){ // last page
 		
 		if(doneFlag){
-			$('#rollDown').html("Run").css('display','block');			
-			$('#rollDown').addClass('runUnityBtn');
+			$('#rollDown').html("Run").css('display','block').addClass('runUnityBtn');
 			$('.loader').css('display','none');
 		}
 		else{
 			console.log('Not Yet');
-			$('#rollDown').css('display','none').html("Next");
-			$('#rollDown').removeClass('runUnityBtn');
+			$('#rollDown').css('display','none').html("Next").removeClass('runUnityBtn');
 			$('.loader').css('display','block');
 		}
-	} 
+	} */
 	
 	
 	marginTop -= 800;
@@ -98,12 +96,13 @@ $("#main .wrap #drawButton").on("click", function () {
         },
         success: function(data) {}
     }).done(function(){
+        //$('.loader').css('display','none');
         $('#teddyCenter button').css("display","block");
         $('#teddyCenter img').attr('src',"Img/check_arrow_2.svg");
 		
-		$('.loader').show();
+		//$('.loader').show();
         ele.parent().find('.loader').css('display', 'none');
-		
+
 		renameObj();
         
     });
@@ -129,7 +128,8 @@ function renameObj()
 
 function bridge()
 {
-    $('#rollDown').click();
+    $('#main #rollDiv .loader').css('display', 'block');
+    $('#rollDown').click().css('display', 'none');
     console.log('Bridge Start');
     $.ajax({
         url: "./openTeddy.php",
@@ -139,8 +139,7 @@ function bridge()
             alert("fault");
         },
         success: function(data) {
-            console.log('bridge: ', data);			
-			
+            console.log('bridge: ', data);
 			drawTeddyCanvas();
             unityCompile();
         }
@@ -158,19 +157,17 @@ function unityCompile()
         },
         success: function(data) {
             console.log(data);
-            $('#teddyCompile #compButton').css("display","block");
-            $('#teddyCompile img').attr('src',"Img/check_arrow_2.svg");
             $('.loader').css('display', 'none');
             
 			doneFlag = true;
-			if(clickCount == 3){
-				$('#rollDown').addClass('runUnityBtn');
-				$('#rollDown').html("Run").css('display','block');
+			if(clickCount == 2) {
+                $('#main #rollDiv .loader').css('display', 'none');
+				$('#rollDown').addClass('runUnityBtn').html("Run").css('display','block');
 			}
         }
     });
 
-    removeButton($(this));
+    //removeButton($(this));
 }
 
 function run () {	
@@ -186,16 +183,11 @@ function run () {
             console.log(data);
         }
     });
-}/*).hover(function(){
-    var yes = $('#Yes');
-    if(yes.css("opacity") == "1")
-      yes.css("opacity", "0").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend', HideTheElementAfterAnimation);
-    else
-     yes.css("display", "block").css("opacity", "1").unbind("transitionend webkitTransitionEnd oTransitionEnd otransitionend");
-});*/
+}
 
 function removeButton(ele)
 {
+    console.log('loader block');
     ele.removeClass("filled");
     ele.addClass("circle");
     ele.html("");
