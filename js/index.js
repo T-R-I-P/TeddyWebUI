@@ -2,21 +2,74 @@ var marginTop = 0;
 var TOP = -800;
 var DOWN = -2400;
 
-$('#main .rollDown').on('click', function() {
-    marginTop -= 800;
-    $('#firstDiv').animate({ marginTop: marginTop + 'px'}, 1000);
+var clickCount = 0;
+var doneFlag = false;
 
-    BorN(marginTop);
+$('#main .rollDown').on('click', function() {
+	clickCount ++;
+	if($('#rollDown').hasClass('runUnityBtn')){
+		run();
+		return ;
+	}
+	
+	if(clickCount == 3){ // last page
+		
+		if(doneFlag){
+			$('#rollDown').html("Run").css('display','block');			
+			$('#rollDown').addClass('runUnityBtn');
+			$('.loader').css('display','none');
+		}
+		else{
+			console.log('Not Yet');
+			$('#rollDown').css('display','none').html("Next");
+			$('#rollDown').removeClass('runUnityBtn');
+			$('.loader').css('display','block');
+		}
+	} 
+	
+	
+	marginTop -= 800;
+    $('#firstDiv').animate({ marginTop: marginTop + 'px'}, 1000);
+    
+	BorN(marginTop);	
+	
+	if(clickCount == 2){
+		$('#teddyCanvas').css('display','');
+	} else {
+		$('#teddyCanvas').css('display','none');
+	}
+    
 });
 $('#main .rollUp').on('click', function() {
-    marginTop += 800;
+    
+	clickCount --;
+	if(clickCount != 3){
+		$('#rollDown').html("Next").css('display','block');
+		if($('#rollDown').hasClass('runUnityBtn'))
+			$('#rollDown').removeClass('runUnityBtn');
+	}	
+		
+	marginTop += 800;
     BorN(marginTop);
+	
+	if(clickCount == 2){
+		$('.loader').css('display','none');
+		$('#teddyCanvas').css('display','');
+	} else {		
+		$('#teddyCanvas').css('display','none');
+	}
+	
+	$('#rollDown').css('display','block');
+	
     $('#firstDiv').animate({ marginTop: marginTop + 'px'}, 1000);
 });
 
 $('#main #startBtn').on('click', function() {
     $('#main #three-container').fadeOut();
     $('#rollDiv .btn-large').css('color', 'white');
+	
+	/* Add */
+	$('#rollDown').css('display','none');
 });
 
 function BorN(marginTop) {
@@ -26,12 +79,15 @@ function BorN(marginTop) {
     if(marginTop < TOP)  rollUp.fadeIn();
     else rollUp.fadeOut();
 
-    if(marginTop > TOP || marginTop <= DOWN) rollDown.fadeOut();
+    if(marginTop > TOP || marginTop < DOWN) rollDown.fadeOut();
     else if(DOWN < marginTop && marginTop <= TOP)  rollDown.fadeIn();
 }
 
 
 $("#main .wrap #drawButton").on("click", function () {
+	
+	doneFlag = false;
+	
     var ele = $(this);
     $.ajax({
         url: "./openTeddy.php",
@@ -44,9 +100,12 @@ $("#main .wrap #drawButton").on("click", function () {
     }).done(function(){
         $('#teddyCenter button').css("display","block");
         $('#teddyCenter img').attr('src',"Img/check_arrow_2.svg");
+		
+		$('.loader').show();
         ele.parent().find('.loader').css('display', 'none');
-        renameObj();
-        bridge();
+		
+		renameObj();
+        
     });
 
     removeButton($(this));
@@ -61,12 +120,17 @@ function renameObj()
         error: function(error) {
             alert("fault");
         },
-        success: function(data) {}
+        success: function(data) {
+            console.log('Renamed Done');
+            bridge();
+        }
     });
 }
 
 function bridge()
 {
+    $('#rollDown').click();
+    console.log('Bridge Start');
     $.ajax({
         url: "./openTeddy.php",
         type: "GET",
@@ -75,9 +139,9 @@ function bridge()
             alert("fault");
         },
         success: function(data) {
-            console.log('bridge: ', data);
-            $('#rollDown').click();
-            drawTeddyCanvas();
+            console.log('bridge: ', data);			
+			
+			drawTeddyCanvas();
             unityCompile();
         }
     });
@@ -94,40 +158,23 @@ function unityCompile()
         },
         success: function(data) {
             console.log(data);
+            $('#teddyCompile #compButton').css("display","block");
+            $('#teddyCompile img').attr('src',"Img/check_arrow_2.svg");
+            $('.loader').css('display', 'none');
+            
+			doneFlag = true;
+			if(clickCount == 3){
+				$('#rollDown').addClass('runUnityBtn');
+				$('#rollDown').html("Run").css('display','block');
+			}
         }
-    }).done(function() {
-        $('#teddyCompile #compButton').css("display","block");
-        $('#teddyCompile img').attr('src',"Img/check_arrow_2.svg");
-        $('.loader').css('display', 'none');
-        $('#LastDiv #runUnityBtn').css("visibility","visible");
     });
 
     removeButton($(this));
 }
 
-/*$("#main .wrap #compButton").on("click", function () {
-    var ele = $(this);
-    $.ajax({
-        url: "./openTeddy.php",
-        type: "GET",
-        data: {option: 'unity'},
-        error: function(error) {
-            alert("fault");
-        },
-        success: function(data) {
-            console.log(data);
-        }
-    }).done(function() {
-        $('#teddyCompile #compButton').css("display","block");
-        $('#teddyCompile img').attr('src',"Img/check_arrow_2.svg");
-        ele.parent().find('.loader').css('display', 'none');
-        $('#LastDiv #runUnityBtn').css("visibility","visible");
-    });
-
-    removeButton($(this));
-});*/
-
-$('#LastDiv #runUnityBtn').on("click", function () {
+function run () {	
+	console.log('hit');
     $.ajax({
         url: "./openTeddy.php",
         type: "GET",
@@ -139,13 +186,13 @@ $('#LastDiv #runUnityBtn').on("click", function () {
             console.log(data);
         }
     });
-}).hover(function(){
+}/*).hover(function(){
     var yes = $('#Yes');
     if(yes.css("opacity") == "1")
       yes.css("opacity", "0").on('transitionend webkitTransitionEnd oTransitionEnd otransitionend', HideTheElementAfterAnimation);
     else
      yes.css("display", "block").css("opacity", "1").unbind("transitionend webkitTransitionEnd oTransitionEnd otransitionend");
-});
+});*/
 
 function removeButton(ele)
 {
@@ -156,7 +203,7 @@ function removeButton(ele)
     ele.parent().find(".circle_2").attr("class", "circle_2 fill_circle");
     ele.css("display","none");
     ele.parent().find('.loader').css('display', 'block');
-
+	
     timer = setInterval(
         function tick() {
             ele.addClass("filled");

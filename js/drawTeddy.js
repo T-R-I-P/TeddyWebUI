@@ -2,6 +2,9 @@ function drawTeddyCanvas() {
   var canvas;
   var context;
   var skeletonPromise = getSkeleton();
+  //ip
+  //var site = 'http://192.168.199.130:8001';
+  var site = 'http://172.16.213.128:8001';
 
   canvas = document.getElementById('teddyCanvas');
   context = canvas.getContext('2d');
@@ -18,9 +21,13 @@ function drawTeddyCanvas() {
   function getMesh() {
     return $.ajax({
       //temp
-      url: './models/teddy.json',
+      //url: './models/teddy.json',
+      //ip
+	  //url: 'http://192.168.199.130:8001/mesh',
+      url: 'http://172.16.213.128:8001/mesh',
       type: "GET"
     }).then(function (data) {
+		
       var position = [];
       var i;
       for (i = 0; i < data.length; i++) {
@@ -35,7 +42,10 @@ function drawTeddyCanvas() {
   function getPolygon(position) {
     return $.ajax({
       //temp
-      url: './models/teddy_poly.json',
+      //url: './models/teddy_poly.json',
+      //ip
+	  //url: 'http://192.168.199.130:8001/poly',
+      url: 'http://172.16.213.128:8001/poly',
       type: "GET"
     })
   }
@@ -70,8 +80,10 @@ function drawTeddyCanvas() {
 
   function getSkeleton() {
     return $.ajax({
-      //temp
-      url: './models/skeleton.json',
+      //url: './models/skeleton.json',
+      //ip
+	  //url: 'http://192.168.199.130:8001/skeleton',
+      url: 'http://172.16.213.128:8001/skeleton',
       type: "GET"
     });
   }
