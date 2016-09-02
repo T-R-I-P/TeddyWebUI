@@ -1,11 +1,13 @@
-    <?php
+<?php
+    session_start();
 
-    //temp
-	$teddy = '"C:\Program Files\Java\jre1.8.0_101\bin\java.exe" -jar teddy\teddy.jar';
-	$mv    = 'move C:\xampp\htdocs\TeddyWebUI\test.obj "C:\xampp\htdocs\TeddyWebUI\models\mymodel.obj"';
+    $teddy = '"C:\Program Files\Java\jre1.8.0_101\bin\java.exe" -jar teddy\teddy.jar';
     $node  = '"C:\Program Files\nodejs\node.exe" "C:\xampp\htdocs\TeddyWebUI\node\cilent.js"';
-    $mv2   = 'move "C:\xampp\htdocs\TeddyWebUI\models\Pinocchio.fbx" "C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\Models\Pinocchio.fbx"'; // Error autogen Not found!! 
-	$mv3   = 'move "C:\xampp\htdocs\TeddyWebUI\models\light_tpose.txt" "C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\ModelReferences\light_tpose.txt"'; // Error autogen Not found!! 
+    $rename    = 'move C:\xampp\htdocs\TeddyWebUI\test.obj "C:\xampp\htdocs\TeddyWebUI\models\mymodel.obj"';
+    $enemyFbxMoveToGameDir = 'move "C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\Models\Pinocchio.fbx" ';
+    $enemyLightTPostMoveToGameDir = 'move "C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\ModelReferences\light_tpose.txt" ';
+    $fbxMoveToGameDir = 'move "C:\xampp\htdocs\TeddyWebUI\models\Pinocchio.fbx" "C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\Models\Pinocchio.fbx"'; // Error autogen Not found!!
+    $lightTPostMoveToGameDir = 'move "C:\xampp\htdocs\TeddyWebUI\models\light_tpose.txt" "C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\ModelReferences\light_tpose.txt"'; // Error autogen Not found!!
     //$com   = '"C:\Program Files\Unity\Editor\Unity.exe" -batchmode -quit -projectPath "C:\xampp\htdocs\TeddyWebUI\autogen" -user Pen -buildWindows64Player "C:\xampp\htdocs\TeddyWebUI\builds\build.exe"'; // Error autogen Not found
     $com   = '"C:\Program Files\Unity\Editor\Unity.exe" -batchmode -quit -projectPath "C:\xampp\htdocs\TeddyWebUI\autogen" -user thumbd12856 -buildWindows64Player "C:\xampp\htdocs\TeddyWebUI\builds\build.exe"'; // Error autogen Not found
     $dest  = '"C:\xampp\htdocs\TeddyWebUI\builds\build.exe"'; // Error builds not found!!
@@ -23,7 +25,7 @@
     }
     
     else if($_GET['option'] == 'renameObj') {
-        exec($mv, $value);
+        exec($rename, $value);
         var_dump($value);
     }
 
@@ -36,18 +38,25 @@
         file_put_contents('models\Pinocchio.fbx',file_get_contents($site."/fbx"));
 		file_put_contents('models\light_tpose.txt',file_get_contents($site."/tpose"));
 		echo 'All Green';
-        /*if($value[0] == "done"){
-			file_put_contents('models\Pinocchio.fbx',file_get_contents($site."/fbx"));
-			echo 'All Green';
-		} else{
-			echo $value[0];
-		}*/
+
+
+        if(!isset($_SESSION['pinocchioId'])) {
+            $_SESSION['pinocchioId'] = 0;
+        } else {
+            $_SESSION['pinocchioId'] += 1;
+        }
+        $enemyFbxMoveToGameDir .= '"C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\Models\Enemy\Models\Pinocchio' . $_SESSION['pinocchioId'] . ".fbx\"";
+        $enemyLightTPostMoveToGameDir .= '"C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\Models\Enemy\References\light_tpose' . "" . $_SESSION['pinocchioId'] . ".txt\"";
+
+        exec($enemyFbxMoveToGameDir, $returnVal);
+        exec($enemyLightTPostMoveToGameDir, $returnVal);
     }
 
-    else if($_GET['option'] == 'unity'){
-        exec($mv2, $returnVal);
+    else if($_GET['option'] == 'unity') {
+
+        exec($fbxMoveToGameDir, $returnVal);
 		var_dump($returnVal);
-		exec($mv3, $returnVal);
+		exec($lightTPostMoveToGameDir , $returnVal);
 		var_dump($returnVal);
         exec($com, $returnVal);
         var_dump($returnVal);
