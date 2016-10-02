@@ -1,26 +1,31 @@
 <?php
     session_start();
 
-    $teddy = '"C:\Program Files\Java\jre1.8.0_101\bin\java.exe" -jar teddy\teddy.jar';
-    $node  = '"C:\Program Files\nodejs\node.exe" "C:\xampp\htdocs\TeddyWebUI\node\cilent.js"';
-    $rename    = 'move C:\xampp\htdocs\TeddyWebUI\test.obj "C:\xampp\htdocs\TeddyWebUI\models\mymodel.obj"';
-    $enemyFbxMoveToGameDir = 'move "C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\Models\Pinocchio.fbx" ';
-    $enemyLightTPostMoveToGameDir = 'move "C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\ModelReferences\light_tpose.txt" ';
-    $fbxMoveToGameDir = 'move "C:\xampp\htdocs\TeddyWebUI\models\Pinocchio.fbx" "C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\Models\Pinocchio.fbx"'; // Error autogen Not found!!
-    $lightTPostMoveToGameDir = 'move "C:\xampp\htdocs\TeddyWebUI\models\light_tpose.txt" "C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\ModelReferences\light_tpose.txt"'; // Error autogen Not found!!
-    //$com   = '"C:\Program Files\Unity\Editor\Unity.exe" -batchmode -quit -projectPath "C:\xampp\htdocs\TeddyWebUI\autogen" -user Pen -buildWindows64Player "C:\xampp\htdocs\TeddyWebUI\builds\build.exe"'; // Error autogen Not found
-    $com   = '"C:\Program Files\Unity\Editor\Unity.exe" -batchmode -quit -projectPath "C:\xampp\htdocs\TeddyWebUI\autogen" -user thumbd12856 -buildWindows64Player "C:\xampp\htdocs\TeddyWebUI\builds\build.exe"'; // Error autogen Not found
-    $dest  = '"C:\xampp\htdocs\TeddyWebUI\builds\build.exe"'; // Error builds not found!!
+    /* Config Setting */
+    $javaPath = '"C:\Program Files\Java\jre1.8.0_101\bin\java.exe"';
+    $nodejsPath = '"C:\Program Files\nodejs\node.exe"';
+    $unityPath = '"C:\Program Files\Unity\Editor\Unity.exe"';
+    $autogenPath = '"G:\Unity Projects\autogen"';
+    $autogenBuildPath = '"C:\xampp\htdocs\TeddyWebUI-master\builds\build.exe"';
+    $autogenAuthor = "yanagiragi";
+    $site  = 'http://192.168.58.128:8001';
 
-    //ip
-	//$site  = 'http://192.168.199.130:8001';
-    $site  = 'http://172.16.213.128:8001';
-	
+    /* Command Generation */
+    $teddy = $javaPath . ' -jar teddy\teddy.jar';
+    $node  = $nodejsPath . ' node\cilent.js';
+    $rename = 'move test.obj models\mymodel.obj';
+    $enemyFbxMoveToGameDir = 'move ' . $autogenPath . '\Assets\Resources\Models\Pinocchio.fbx';
+    $enemyLightTPostMoveToGameDir = 'move ' . $autogenPath . '\Assets\Resources\ModelReferences\light_tpose.txt';
+    
+    $fbxMoveToGameDir = 'move models\Pinocchio.fbx ' . $autogenPath. '\Assets\Resources\Models\Pinocchio.fbx'; 
+    $lightTPostMoveToGameDir = 'move models\light_tpose.txt ' . $autogenPath. '\Assets\Resources\ModelReferences\light_tpose.txt'; 
+    
+    $com   = $unityPath .' -batchmode -quit -projectPath ' . $autogenPath . ' -user ' . $autogenAuthor . ' -buildWindows64Player ' . $autogenBuildPath; 
+    $dest  = $autogenBuildPath; 
 	    
 
     if($_GET['option'] == 'drawTeddy'){
-		//exec($teddy, $value);
-        exec('java -jar teddy\teddy.jar', $value);
+		exec($teddy, $value);
         var_dump($value);
     }
     
@@ -30,11 +35,9 @@
     }
 
     else if($_GET['option'] == 'bridge') {
-        echo "php start bridge";
         exec($node, $value);
         var_dump($value);
                 
-        //var_dump($value);
         file_put_contents('models\Pinocchio.fbx',file_get_contents($site."/fbx"));
 		file_put_contents('models\light_tpose.txt',file_get_contents($site."/tpose"));
 		echo 'All Green';
@@ -42,11 +45,13 @@
 
         if(!isset($_SESSION['pinocchioId'])) {
             $_SESSION['pinocchioId'] = 0;
-        } else {
+        }
+        else {
             $_SESSION['pinocchioId'] += 1;
         }
-        $enemyFbxMoveToGameDir .= '"C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\Models\Enemy\Models\Pinocchio' . $_SESSION['pinocchioId'] . ".fbx\"";
-        $enemyLightTPostMoveToGameDir .= '"C:\xampp\htdocs\TeddyWebUI\autogen\Assets\Resources\Models\Enemy\References\light_tpose' . "" . $_SESSION['pinocchioId'] . ".txt\"";
+
+        $enemyFbxMoveToGameDir .= $autogenPath . '\Assets\Resources\Models\Enemy\Models\Pinocchio' . $_SESSION['pinocchioId'] . ".fbx\"";
+        $enemyLightTPostMoveToGameDir .= $autogenPath . '\Assets\Resources\Models\Enemy\References\light_tpose' . "" . $_SESSION['pinocchioId'] . ".txt\"";
 
         exec($enemyFbxMoveToGameDir, $returnVal);
         exec($enemyLightTPostMoveToGameDir, $returnVal);
@@ -56,13 +61,14 @@
 
         exec($fbxMoveToGameDir, $returnVal);
 		var_dump($returnVal);
+
 		exec($lightTPostMoveToGameDir , $returnVal);
 		var_dump($returnVal);
+
         exec($com, $returnVal);
         var_dump($returnVal);
-		echo 'unity!';
+
     }
     else if($_GET['option'] == 'run'){
-		echo 'run!';
         exec($dest);
     }
