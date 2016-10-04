@@ -35,7 +35,7 @@ $(function() {
 
 
 function createTextAnimation() {
-    var geometry = generateTextGeometry('Teddying', {
+    var geometry = generateTextGeometry('TeddyGo', {
         size:14,
         height:4,
         font:'droid sans',
