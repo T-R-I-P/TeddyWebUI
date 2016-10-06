@@ -5,7 +5,8 @@
     $javaPath = '"C:\Program Files\Java\jre1.8.0_101\bin\java.exe"';
     $nodejsPath = '"C:\Program Files\nodejs\node.exe"';
     $unityPath = '"C:\Program Files\Unity\Editor\Unity.exe"';
-    $autogenPath = '"G:\Unity Projects\autogen"';
+    //$autogenPath = '"G:\Unity Projects\autogen"';
+    $autogenPath = '"C:\Users\Ragi\Desktop\autogen"';
     $autogenBuildPath = '"C:\xampp\htdocs\TeddyWebUI-master\builds\build.exe"';
     $autogenAuthor = "yanagiragi";
     $site  = 'http://192.168.58.128:8001';

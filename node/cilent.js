@@ -1,6 +1,4 @@
-//ip
-//const io = require('socket.io-client')('http://192.168.199.130:8001');
-const io = require('socket.io-client')('http://172.16.213.128:8001');
+const io = require('socket.io-client')('http://192.168.58.128:8001');
 const fs = require('fs');
 const checksum = require('checksum');
 
