@@ -7,7 +7,8 @@
         <link href="./css/button.css" rel="stylesheet">
         <link href="./css/loader.css" rel="stylesheet">
         <script src="./js/bluebird.min.js"></script>
-        <script src="./js/jquery.min.js"></script>        
+        <script src="./js/jquery.min.js"></script>     
+        <script src="./js/materialize.min.js"></script>   
         <script src='./js/three.min.js'></script>
 		<script src='./js/bas.js'></script>
 		<script src='./js/TextGeometry.js'></script>
@@ -46,11 +47,22 @@
 
 			<div id="CanvasDiv" class="row">
                 <canvas id="teddyCanvas" height="600" width="1000"></canvas>
-                
-                <!-- 
+
+                <a id="QRcodeBtn" class="waves-effect waves-light modal-trigger btn-large" href="#qrCodeModal">
+                    <i class="material-icons" style="float: right; left: 10px; position: relative;">phonelink_ring</i>
+                    <span>QR code</span>
+                </a>
+
+                <!-- Modal Structure -->
+                <div id="qrCodeModal" class="modal">
+                    <div class="modal-content">
+                        <md-toolbar class="md-default-theme"><h4>QR code</h4></md-toolbar>
                         <div id="qrcode"></div>
-                        js : $('#qrcode').qrcode("this plugin is great");
-                -->
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
+                </div>
 
             </div>
 			
@@ -65,7 +77,7 @@
                 </div>
                 <div class="right">
                     <div class="loader">Loading...</div>
-                    <a id="rollDown" class="rollDown waves-effect waves-light btn-large">Next</a>
+                    <a id="rollDown" class="rollDown light-blue darken-4 waves-effect waves-light btn-large">Next</a>
                 </div>
             </div>
         </div>

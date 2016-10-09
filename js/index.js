@@ -141,7 +141,27 @@ function bridge()
         success: function(data) {
             console.log('bridge: ', data);
 			drawTeddyCanvas();
+            getFbxUrl();            
             unityCompile();
+        }
+    });
+}
+
+function getFbxUrl()
+{
+    $('.modal-trigger').leanModal();
+    $.ajax({
+        url: "./openTeddy.php",
+        type: "GET",
+        data: {option: 'getFbxUrl'},
+        error: function(error) {
+            alert("fault");
+        },
+        success: function(data) {
+            console.log(data);
+            $('#QRcodeBtn').fadeIn();
+            var url = 'http://www2.cs.ccu.edu.tw/~hc102u/fbx/' + data + '.fbx';
+            $('#qrcode').qrcode(url);
         }
     });
 }

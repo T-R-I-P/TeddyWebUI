@@ -45,7 +45,7 @@ canvas {
     float: right;
 }
 #main #rollDiv .rollDown{
-	color:black;
+	color: black;
     position: fixed;
     top: 700px;
 	display: none;
@@ -156,4 +156,48 @@ canvas {
     z-index: -1;
     margin-left: 35%;
     transform: scale(1, -1);
+}
+
+
+/*QR code*/
+#QRcodeBtn {
+    display: none;
+    top: 700px;
+    position: absolute;
+}
+
+#qrCodeModal {
+    height: 50%;
+}
+
+#qrCodeModal .modal-content {
+    padding: 0;
+    height: 85%;
+}
+
+#qrCodeModal #qrcode canvas {
+    left: 38%;
+    top: 100px;
+}
+
+md-toolbar.md-default-theme {
+    background-color: rgb(85,139,47);
+    color: rgb(255,255,255);
+    padding-top: 15px;
+    text-align: center;
+}
+
+md-toolbar {
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+    min-height: 64px;
+    width: 100%;
 }

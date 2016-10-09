@@ -73,3 +73,8 @@
     else if($_GET['option'] == 'run'){
         exec($dest);
     }
+
+    else if($_GET['option'] == 'getFbxUrl') {
+        $FbxUrl = file_get_contents($site."/token");
+        echo $FbxUrl;
+    }
