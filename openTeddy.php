@@ -9,9 +9,9 @@
     $AssetsBundleBuildPath = '"C:\temp\build.exe"';
     $AssetsBundleBuildDataPath = '"C:\temp\build_Data\StreamingAssets"';
     $AssetsBundleDestinition = '"C:\temp\StreamingAssets"';
-    //$autogenPath = '"G:\Unity Projects\autogen"';
-    $autogenPath = '"C:\Users\Ragi\Desktop\autogen"';
-    $autogenBuildPath = '"C:\xampp\htdocs\TeddyWebUI-master\builds\build.exe"';
+    // $autogenPath = '"G:\Unity Projects\autogen"';
+    // $autogenPath = '"C:\temp\Autogen"';
+    $autogenBuildPath = '"C:\temp\Autogen\builds\TeddyGo.exe"';
     $autogenAuthor = "yanagiragi";
     $site  = 'http://192.168.58.128:8001';
 
