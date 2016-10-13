@@ -5,6 +5,10 @@
     $javaPath = '"C:\Program Files\Java\jre1.8.0_101\bin\java.exe"';
     $nodejsPath = '"C:\Program Files\nodejs\node.exe"';
     $unityPath = '"C:\Program Files\Unity\Editor\Unity.exe"';
+    $AssetsBundlePath = '"C:\temp\Create Asset bundles"';
+    $AssetsBundleBuildPath = '"C:\temp\build.exe"';
+    $AssetsBundleBuildDataPath = '"C:\temp\build_Data\StreamingAssets"';
+    $AssetsBundleDestinition = '"C:\temp\StreamingAssets"';
     //$autogenPath = '"G:\Unity Projects\autogen"';
     $autogenPath = '"C:\Users\Ragi\Desktop\autogen"';
     $autogenBuildPath = '"C:\xampp\htdocs\TeddyWebUI-master\builds\build.exe"';
@@ -15,17 +19,19 @@
     $teddy = $javaPath . ' -jar teddy\teddy.jar';
     $node  = $nodejsPath . ' node\cilent.js';
     $rename = 'move test.obj models\mymodel.obj';
-    $enemyFbxMoveToGameDir = 'move ' . $autogenPath . '\Assets\Resources\Models\Pinocchio.fbx';
-    $enemyLightTPostMoveToGameDir = 'move ' . $autogenPath . '\Assets\Resources\ModelReferences\light_tpose.txt';
     
-    $fbxMoveToGameDir = 'move models\Pinocchio.fbx ' . $autogenPath. '\Assets\Resources\Models\Pinocchio.fbx'; 
-    $lightTPostMoveToGameDir = 'move models\light_tpose.txt ' . $autogenPath. '\Assets\Resources\ModelReferences\light_tpose.txt'; 
-    
-    $com   = $unityPath .' -batchmode -quit -projectPath ' . $autogenPath . ' -user ' . $autogenAuthor . ' -buildWindows64Player ' . $autogenBuildPath; 
-    $dest  = $autogenBuildPath; 
+    //asset bundle
+    $enemyFbxMoveToAssetsBundle = 'move ' . $AssetsBundleDestinition . '\testbundle0';    
+    $playerFbxMoveToAssetsBundle = 'move models\Pinocchio.fbx ' . $AssetsBundlePath. '\Assets\Pinocchio.fbx'; 
+    $playerLightTPostMoveToAssetsBundle = 'move models\light_tpose.txt ' . $AssetsBundlePath. '\Assets\light_tpose.txt'; 
+
+    $AssetsBundleMoveToAutogen = 'move ' . $AssetsBundleBuildDataPath . '\testbundle';
+    $AssetsBundleCom = $unityPath . ' -batchmode -quit -projectPath ' . $AssetsBundlePath . ' -executeMethod CreateAssetBundles.CreateAssetBundlesMain -user ' . $autogenAuthor . ' -buildWindows64Player ' . $AssetsBundleBuildPath;
+
+    $unityRun  = $autogenBuildPath;
 	    
 
-    if($_GET['option'] == 'drawTeddy'){
+    if($_GET['option'] == 'drawTeddy') {
 		exec($teddy, $value);
         var_dump($value);
     }
@@ -45,35 +51,38 @@
 
 
         if(!isset($_SESSION['pinocchioId'])) {
-            $_SESSION['pinocchioId'] = 0;
-        }
-        else {
+            $_SESSION['pinocchioId'] = 1;
+        } else {
             $_SESSION['pinocchioId'] += 1;
         }
 
-        $enemyFbxMoveToGameDir .= $autogenPath . '\Assets\Resources\Models\Enemy\Models\Pinocchio' . $_SESSION['pinocchioId'] . ".fbx\"";
-        $enemyLightTPostMoveToGameDir .= $autogenPath . '\Assets\Resources\Models\Enemy\References\light_tpose' . "" . $_SESSION['pinocchioId'] . ".txt\"";
-
-        exec($enemyFbxMoveToGameDir, $returnVal);
-        exec($enemyLightTPostMoveToGameDir, $returnVal);
+        //move enemy from player to enemy folder
+        exec($enemyFbxMoveToAssetsBundle . ' ' . $AssetsBundleDestinition . '\Enemy\testbundle' . $_SESSION['pinocchioId'], $returnVal);
+        exec($enemyFbxMoveToAssetsBundle . '.manifest ' . $AssetsBundleDestinition . '\Enemy\testbundle' . $_SESSION['pinocchioId']. '.manifest', $returnVal);
     }
 
     else if($_GET['option'] == 'unity') {
 
-        exec($fbxMoveToGameDir, $returnVal);
+        // move player fbx to assets bundle
+        exec($playerFbxMoveToAssetsBundle, $returnVal);
+		var_dump($returnVal);
+		exec($playerLightTPostMoveToAssetsBundle , $returnVal);
 		var_dump($returnVal);
 
-		exec($lightTPostMoveToGameDir , $returnVal);
-		var_dump($returnVal);
+        //exec asset bundle
+        exec($AssetsBundleCom, $returnVal);
+        //move player asset bundle to autogen project
+        exec($AssetsBundleMoveToAutogen . ' ' . $AssetsBundleDestinition . '\testbundle0', $returnVal);
+        exec($AssetsBundleMoveToAutogen . '.manifest ' . $AssetsBundleDestinition . '\testbundle0.manifest', $returnVal);
 
-        exec($com, $returnVal);
         var_dump($returnVal);
 
     }
-    else if($_GET['option'] == 'run'){
-        exec($dest);
+    else if($_GET['option'] == 'run') {
+        exec($unityRun);
     }
 
+    //QR code
     else if($_GET['option'] == 'getFbxUrl') {
         $FbxUrl = file_get_contents($site."/token");
         echo $FbxUrl;
