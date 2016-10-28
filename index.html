@@ -48,16 +48,16 @@
 			<div id="CanvasDiv" class="row">
                 <canvas id="teddyCanvas" height="600" width="1000"></canvas>
 
-                <a id="QRcodeBtn" class="waves-effect waves-light modal-trigger btn-large" href="#qrCodeModal">
+                <a id="QRcodeBtn" class="waves-effect waves-light modal-trigger btn-large tooltipped" href="#qrCodeModal" data-position="top" data-delay="50" data-tooltip="我會產生 QR code 讓你下載模型檔唷~">
                     <i class="material-icons" style="float: right; left: 10px; position: relative;">phonelink_ring</i>
-                    <span>QR code</span>
+                    <span>帶我走</span>
                 </a>
 
                 <!-- Modal Structure -->
                 <div id="qrCodeModal" class="modal">
                     <div class="modal-content">
                         <md-toolbar class="md-default-theme"><h4>QR code</h4></md-toolbar>
-                        <div id="qrcode"></div>
+                        <div id="qrcodeDIV"></div>
                     </div>
                     <div class="modal-footer">
                         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
